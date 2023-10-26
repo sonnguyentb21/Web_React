@@ -7,6 +7,9 @@ import HomePage from "./pages/HomePage";
 import CreatePage from "./pages/CreatePage";
 import EditPage from "./pages/EditPage";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const App = () => {
   return (
     <div>
@@ -19,17 +22,20 @@ const App = () => {
           </Link>
         </div>
       </nav>
-      <Routes>
-        <Route
-          index
-          element={<HomePage />}></Route>
-        <Route
-          path="/create"
-          element={<CreatePage />}></Route>
-        <Route
-          path="/edit"
-          element={<EditPage />}></Route>
-      </Routes>
+      <div className="container mx-auto p-2 h-full">
+        <Routes>
+          <Route
+            index
+            element={<HomePage />}></Route>
+          <Route
+            path="/create"
+            element={<CreatePage />}></Route>
+          <Route
+            path="/edit/:id"
+            element={<EditPage />}></Route>
+        </Routes>
+      </div>
+      <ToastContainer />
     </div>
   );
 };
